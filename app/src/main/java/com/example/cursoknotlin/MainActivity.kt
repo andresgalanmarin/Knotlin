@@ -21,7 +21,13 @@ class MainActivity : AppCompatActivity() {
         //loops()
 
         //Leccion 9
-        nullSafety()
+        //nullSafety()
+
+        //Leccion 10
+        //funciones()
+
+        //Leccion 11
+        classes()
     }
     /*
     Aqui hablamos de la sentencia When
@@ -245,6 +251,69 @@ class MainActivity : AppCompatActivity() {
             println(this)
         }
 
+    }
+
+    /*
+    Aqui hablamos de funciones
+     */
+    fun funciones () {
+
+        sayHello()
+        sayHello()
+        sayHello()
+
+        sayMyName("Andrés")
+        sayMyName("Pedro")
+        sayMyName("Sara")
+
+        sayMyNameAndAge("Andres", 44)
+
+        val sumResult = sumTwoNumber(10,5)
+        println(sumResult)
+        println (sumTwoNumber(10,5))
+
+        println(sumTwoNumber(9,sumTwoNumber(3,7)))
+    }
+
+    //Función simple
+    fun sayHello() {
+
+        println("Hola!")
+    }
+
+    //Funciones con un parámetro de entrada
+    fun sayMyName(name: String) {
+        println("Hola mi nombre es $name")
+    }
+
+    //Funciones con un parámetro de entrada
+    fun sayMyNameAndAge(name: String, edad: Int) {
+        println("Hola mi nombre es $name y mi edad es $edad")
+    }
+
+    //Funciones con valor de retorno
+    fun sumTwoNumber(firstNumber: Int, secondNumber: Int) : Int{
+        val sum = firstNumber+secondNumber
+        return sum
+    }
+
+    /*
+    Aquí hablamos de clases u objetos
+     */
+    fun classes() {
+
+        val andres = Programmer("Andres", 44, arrayOf(Programmer.Language.HTMl5,Programmer.Language.KOTLIN,Programmer.Language.PHP))
+        println(andres.name)
+
+        andres.age = 45
+        andres.code()
+
+        val sara= Programmer("Sara", 35, arrayOf(Programmer.Language.JAVA,Programmer.Language.SWIFT),
+            arrayOf(andres))
+        println(sara.name)
+        sara.code()
+
+        println("${sara.friends?.first()?.name} es amigo de ${sara.name}. ${sara.friends?.first()?.name} tiene ${sara.friends?.first()?.age} años")
     }
 
 }
